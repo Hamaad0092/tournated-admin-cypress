@@ -8,7 +8,7 @@ describe("User should create Add New Platform", () => {
     cy.contains('Log In').click()
     cy.wait(8000);
     cy.get(".sidebar-toggler > div").click();
-    cy.get('[style="margin-top: 5px;"] > div').click();
+    cy.get('div[role="button"]').click();
     cy.get(
       '[href="/dashboard/platforms"] > .MuiListItemText-root > .MuiTypography-root'
     ).click();
