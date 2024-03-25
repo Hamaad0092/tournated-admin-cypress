@@ -19,11 +19,16 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+<<<<<<< HEAD
   video: true,
   projectId: "1f5byj",
 
 
+=======
+    projectId: "1f5byj",
+>>>>>>> b4b0762851647cd4d0263b5bead8f730800594af
   e2e: {
+    video: true,
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
