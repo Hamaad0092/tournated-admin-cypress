@@ -34,7 +34,7 @@ describe('Add a New Leaguage',()=>{
         cy.contains('Add New Point').click()
         cy.get(':nth-child(2) > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('HelloWorld')
         cy.get('select[name="fieldType"]').select('select')
-        // cy.contain('Save').click()
+        cy.contains('Save').click()
         cy.get('.css-6iggc8 > .MuiBox-root > .MuiTypography-root').attachFile(img)
         cy.get('select[name="status"]').select('Active')
         cy.get('input[name="enableRankings"]').click()
