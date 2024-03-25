@@ -1,4 +1,4 @@
-describe.skip('tournated app Tournament manager User authentication', () => {
+describe('tournated app Tournament manager User authentication', () => {
   beforeEach(()=>{
    cy.visit('https://vertexo-tournament-git-dev-waleedsaifi.vercel.app/authentication/register')
   
@@ -6,15 +6,13 @@ describe.skip('tournated app Tournament manager User authentication', () => {
  
    // Sign up with Valid details. ====>>       (PASS)
    it('should Sign up user', () => {
-     cy.get('.css-6wbyuk-MuiGrid-root > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("Demoemai11@gmail.com")
-     cy.get(':nth-child(2) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("John")
+    cy.get('input[name="email"]').type("Demoemai11@gmail.com", { force: true });
+    cy.get(':nth-child(2) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("John")
      cy.get(':nth-child(3) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("Doe")
      cy.get('.MuiGrid-grid-md-12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("password@12")
      cy.get('.MuiGrid-grid-md-6.jss12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("password@12")
-     cy.get(':nth-child(1) > .jss14 > .css-108b08z > .jss16 > :nth-child(1) > div').click()
-     cy.get('.jss15 > .css-108b08z > .jss16 > :nth-child(1) > div').click()
      cy.get(':nth-child(1) > .jss14').click()
-     cy.get(':nth-child(2) > .jss14').click()
+     cy.contains('Beach Tennis').click()
      cy.get('#mui-component-select-role').click()
      cy.get('.MuiList-root > [tabindex="0"]').click()
      cy.get('.PrivateSwitchBase-input').click()
@@ -28,66 +26,58 @@ describe.skip('tournated app Tournament manager User authentication', () => {
  
  //Sign up with invalid email type   =====>>      (PASS)
  it('should  not Sign up with invalid email type',()=>{
-   cy.get('.css-6wbyuk-MuiGrid-root > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("hamaadsaeed0001121")
-     cy.get(':nth-child(2) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("John")
-     cy.get(':nth-child(3) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("Doe")
-     cy.get('.MuiGrid-grid-md-12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("password@12")
-     cy.get('.MuiGrid-grid-md-6.jss12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("password@12")
-     cy.get(':nth-child(1) > .jss14 > .css-108b08z > .jss16 > :nth-child(1) > div').click()
-     cy.get('.jss15 > .css-108b08z > .jss16 > :nth-child(1) > div').click()
-     cy.get(':nth-child(1) > .jss14').click()
-     cy.get(':nth-child(2) > .jss14').click()
-     cy.get('#mui-component-select-role').click()
-     cy.get('.MuiList-root > [tabindex="0"]').click()
-     cy.get('.PrivateSwitchBase-input').click()
-     cy.get('.MuiButton-label').click()
+  cy.get('input[name="email"]').type("Demoemai112322@gmail.com", { force: true });
+  cy.get(':nth-child(2) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("John")
+   cy.get(':nth-child(3) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("Doe")
+   cy.get('.MuiGrid-grid-md-12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("password@12")
+   cy.get('.MuiGrid-grid-md-6.jss12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("password@12")
+   cy.get(':nth-child(1) > .jss14').click()
+   cy.contains('Beach Tennis').click()
+   cy.get('#mui-component-select-role').click()
+   cy.get('.MuiList-root > [tabindex="0"]').click()
+   cy.get('.PrivateSwitchBase-input').click()
+   cy.get('.MuiButton-label').click()
  })
  
  
  // Sign up with invalid name type (Fail) =====>>       (FAIL)
  it('Should not Sign up with invalid name type',()=>{
-   cy.get('.css-6wbyuk-MuiGrid-root > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("hamaadsaeed@gmail.com")
-     cy.get(':nth-child(2) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("000000000000000000000000000000000")
-     cy.get(':nth-child(3) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("090909000000000909009090909")
-     cy.get('.MuiGrid-grid-md-12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("password@12")
-     cy.get('.MuiGrid-grid-md-6.jss12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("password@12")
-     cy.get(':nth-child(1) > .jss14 > .css-108b08z > .jss16 > :nth-child(1) > div').click()
-     cy.get('.jss15 > .css-108b08z > .jss16 > :nth-child(1) > div').click()
-     cy.get(':nth-child(1) > .jss14').click()
-     cy.get(':nth-child(2) > .jss14').click()
-     cy.get('#mui-component-select-role').click()
-     cy.get('.MuiList-root > [tabindex="0"]').click()
-     cy.get('.PrivateSwitchBase-input').click()
-     cy.get('.MuiButton-label').click()
+  cy.get('input[name="email"]').type("Demoemai11@gmail.com", { force: true });
+  cy.get(':nth-child(2) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("00000000000000000000")
+   cy.get(':nth-child(3) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("121111111111111")
+   cy.get('.MuiGrid-grid-md-12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("password@12")
+   cy.get('.MuiGrid-grid-md-6.jss12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("password@12")
+   cy.get(':nth-child(1) > .jss14').click()
+   cy.contains('Beach Tennis').click()
+   cy.get('#mui-component-select-role').click()
+   cy.get('.MuiList-root > [tabindex="0"]').click()
+   cy.get('.PrivateSwitchBase-input').click()
+   cy.get('.MuiButton-label').click()
  })
  
  
  // sign up with space password  =====>>           (FAIL)
  it('Should not Sign up with space password',()=>{
-   cy.get('.css-6wbyuk-MuiGrid-root > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("hamaadsaeed3@gmail.com")
-     cy.get(':nth-child(2) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("000000000000000000000000000000000")
-     cy.get(':nth-child(3) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("090909000000000909009090909")
-     cy.get('.MuiGrid-grid-md-12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("            ")
-     cy.get('.MuiGrid-grid-md-6.jss12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("            ")
-     cy.get(':nth-child(1) > .jss14 > .css-108b08z > .jss16 > :nth-child(1) > div').click()
-     cy.get('.jss15 > .css-108b08z > .jss16 > :nth-child(1) > div').click()
-     cy.get(':nth-child(1) > .jss14').click()
-     cy.get(':nth-child(2) > .jss14').click()
-     cy.get('#mui-component-select-role').click()
-     cy.get('.MuiList-root > [tabindex="0"]').click()
-     cy.get('.PrivateSwitchBase-input').click()
-     cy.get('.MuiButton-label').click()
+  cy.get('input[name="email"]').type("Demoemai11@gmail.com", { force: true });
+  cy.get(':nth-child(2) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("John")
+   cy.get(':nth-child(3) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("Doe")
+   cy.get('.MuiGrid-grid-md-12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("      ")
+   cy.get('.MuiGrid-grid-md-6.jss12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("      ")
+   cy.get(':nth-child(1) > .jss14').click()
+   cy.contains('Beach Tennis').click()
+   cy.get('#mui-component-select-role').click()
+   cy.get('.MuiList-root > [tabindex="0"]').click()
+   cy.get('.PrivateSwitchBase-input').click()
+   cy.get('.MuiButton-label').click()
  })
  
  // sign up without select any sport  =====>>           (FAIL)
  it('Should not Sign up without select any sport',()=>{
-   cy.get('.css-6wbyuk-MuiGrid-root > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("hamaadsaeed3@gmail.com")
-     cy.get(':nth-child(2) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("000000000000000000000000000000000")
-     cy.get(':nth-child(3) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("090909000000000909009090909")
-     cy.get('.MuiGrid-grid-md-12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("            ")
-     cy.get('.MuiGrid-grid-md-6.jss12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("            ")
-     cy.get(':nth-child(1) > .jss14 > .css-108b08z > .jss16 > :nth-child(1) > div').click()
-     cy.get('.jss15 > .css-108b08z > .jss16 > :nth-child(1) > div').click()
+  cy.get('input[name="email"]').type("Demoemai11@gmail.com", { force: true });
+    cy.get(':nth-child(2) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("John")
+     cy.get(':nth-child(3) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("Doe")
+     cy.get('.MuiGrid-grid-md-12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("password@12")
+     cy.get('.MuiGrid-grid-md-6.jss12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("password@12")
      cy.get('#mui-component-select-role').click()
      cy.get('.MuiList-root > [tabindex="0"]').click()
      cy.get('.PrivateSwitchBase-input').click()
@@ -97,33 +87,29 @@ describe.skip('tournated app Tournament manager User authentication', () => {
  
  // sign up without slect user role  =====>>           (PASS)
  it('Should not Sign up without select user role',()=>{
-   cy.get('.css-6wbyuk-MuiGrid-root > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("hamaadsaeed4@gmail.com")
-     cy.get(':nth-child(2) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("000000000000000000000000000000000")
-     cy.get(':nth-child(3) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("090909000000000909009090909")
-     cy.get('.MuiGrid-grid-md-12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("            ")
-     cy.get('.MuiGrid-grid-md-6.jss12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("            ")
-     cy.get(':nth-child(1) > .jss14 > .css-108b08z > .jss16 > :nth-child(1) > div').click()
-     cy.get('.jss15 > .css-108b08z > .jss16 > :nth-child(1) > div').click()
-     cy.get(':nth-child(1) > .jss14').click()
-     cy.get(':nth-child(2) > .jss14').click()
-     cy.get('.PrivateSwitchBase-input').click()
-     cy.get('.MuiButton-label').click()
+  cy.get('input[name="email"]').type("Demoemai11@gmail.com", { force: true });
+  cy.get(':nth-child(2) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("John")
+   cy.get(':nth-child(3) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("Doe")
+   cy.get('.MuiGrid-grid-md-12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("password@12")
+   cy.get('.MuiGrid-grid-md-6.jss12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("password@12")
+   cy.get(':nth-child(1) > .jss14').click()
+   cy.contains('Beach Tennis').click()
+   cy.get('.PrivateSwitchBase-input').click()
+   cy.get('.MuiButton-label').click()
  })
  
  // sign up without slect terms & conditions =====>>           (PASS)
  it('Should not Sign up without select terms & conditions',()=>{
-   cy.get('.css-6wbyuk-MuiGrid-root > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("hamaadsaeed4@gmail.com")
-     cy.get(':nth-child(2) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("000000000000000000000000000000000")
-     cy.get(':nth-child(3) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("090909000000000909009090909")
-     cy.get('.MuiGrid-grid-md-12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("            ")
-     cy.get('.MuiGrid-grid-md-6.jss12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("            ")
-     cy.get(':nth-child(1) > .jss14 > .css-108b08z > .jss16 > :nth-child(1) > div').click()
-     cy.get('.jss15 > .css-108b08z > .jss16 > :nth-child(1) > div').click()
-     cy.get(':nth-child(1) > .jss14').click()
-     cy.get(':nth-child(2) > .jss14').click()
-     cy.get('#mui-component-select-role').click()
-     cy.get('.MuiList-root > [tabindex="0"]').click()
-     cy.get('.MuiButton-label').click()
+  cy.get('input[name="email"]').type("Demoemai11@gmail.com", { force: true });
+  cy.get(':nth-child(2) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("John")
+   cy.get(':nth-child(3) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("Doe")
+   cy.get('.MuiGrid-grid-md-12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("password@12")
+   cy.get('.MuiGrid-grid-md-6.jss12 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("password@12")
+   cy.get(':nth-child(1) > .jss14').click()
+   cy.contains('Beach Tennis').click()
+   cy.get('#mui-component-select-role').click()
+   cy.get('.MuiList-root > [tabindex="0"]').click()
+   cy.get('.MuiButton-label').click()
  })
  })
 
@@ -135,20 +121,20 @@ cy.visit('https://vertexo-admin-git-dev-waleedsaifi.vercel.app/dashboard')
 })
 
 // User should not login with wrong creds.  ====>> (Pass)   
-it.skip('user should not login with wrong creds',()=>{
+it('user should not login with wrong creds',()=>{
   cy.wait(2000)
   cy.get('form > :nth-child(1) > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('superAdmin@gmail.com')
-  cy.get('.jss14 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('    ')
+  cy.get('input[name="password"]').type('    ')
   cy.get('.PrivateSwitchBase-input').click()
-  cy.get('.css-1icgf7x > .MuiButton-root > .MuiButton-label').click()
+  cy.contains('Log In').click()
 })
 
 //user should successfully login with right creds for admin panal ====>>>(Pass)
 it('user should login as admin with valid creds',()=>{
   cy.get('form > :nth-child(1) > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('superAdmin@gmail.com')
-  cy.get('.jss14 > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('password')
+  cy.get('input[name="password"]').type('password')
   cy.get('.PrivateSwitchBase-input').click()
-  cy.get('.css-1icgf7x > .MuiButton-root > .MuiButton-label').click()
+  cy.contains('Log In').click()
   cy.wait(4000)
   cy.get('.sidebar-toggler > div').click()
   cy.get('.css-1a8w37c > :nth-child(2)').click()
@@ -157,14 +143,10 @@ it('user should login as admin with valid creds',()=>{
   cy.wait(5000)
   cy.get('[style="margin-top: 4px; padding-left: 5px;"] > div > .injected-svg > g > path').click()
   cy.wait(2000)
-  // cy.fixture('avatar.png', 'base64').then(fileContent => {
-  //   // Get the file input element and attach the file
-  //   cy.get('input[type="file"]').attachFile({
-  //     fileContent: fileContent.toString(),
-  //     fileName: 'avatar.png',
-  //     mimeType: 'image/png'
-  //   });
-  // });
+ 
+
+  // ****** General *****
+
   const profilePic = 'avatar.png'
   cy.get('input[type="file"]').attachFile(profilePic);
   
@@ -189,16 +171,46 @@ it('user should login as admin with valid creds',()=>{
   cy.get(':nth-child(6) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('Berlin')
   cy.get(':nth-child(7) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('alige 123# 755 nht')
   cy.get('.css-bc7mqo > :nth-child(5) > .MuiButton-root')
+  cy.get('.css-bc7mqo > :nth-child(5) > .MuiButton-root').click()
 
+  // ***** Career ******
+
+  cy.get('.MuiGrid-container > :nth-child(4) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type(' It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.')
+  cy.wait(2000)
   
+  cy.get(':nth-child(2) > .MuiFormControlLabel-root').click()
+  cy.get(':nth-child(3) > .MuiFormControlLabel-root').click()
+  cy.get(':nth-child(4) > .MuiFormControlLabel-root ').click()
+  cy.get(':nth-child(6) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('https://www.github.com/')
+  cy.get(':nth-child(7) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('https://www.facebook.com/')
+  cy.get(':nth-child(8) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('https://www.instagram.com')
+  cy.get(':nth-child(9) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('https://www.linkedin.com')
+  cy.get(':nth-child(10) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('https://www.tiktok.com')
+  cy.get(':nth-child(11) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('https://www.youtube.com/')
+  cy.contains('Go to Next').click()
 
-
+  // ***** third party license page *****
+  cy.wait(2000)
+  cy.get('.MuiGrid-root > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('arbg1234')
+  cy.contains('Go to Next').click()
   
+// ***** Password *****
+cy.wait(2000)
+cy.get(':nth-child(1) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('Password')
+cy.get(':nth-child(2) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('Password')
+cy.contains('Go to Next').click()
+
+//****   Login setting ****
+cy.wait(2000)
+cy.get('.MuiGrid-container > .MuiGrid-root > :nth-child(2)').click()
+cy.get(':nth-child(3) > .MuiFormControlLabel-root').click()
+cy.contains('Go to Next').click()
+
+//****     Management ****
+cy.wait(2000)
+cy.contains('Save').click()
 })
 
-// it('Get profile photo from local storage',()=>{
-// cy.visit('https://vertexo-admin-git-dev-waleedsaifi.vercel.app/dashboard/users/new')
-// })
 
 
 
