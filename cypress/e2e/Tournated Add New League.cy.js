@@ -18,10 +18,8 @@ describe('Add a New Leaguage',()=>{
     cy.get('.MuiAutocomplete-root > .MuiFormControl-root > .MuiOutlinedInput-root').eq(1).type("Harlay").wait(2000);
     cy.get('li[role="option"]').eq(0).click();
    
-    
-    // cy.get(':nth-child(11) > .MuiOutlinedInput-root > .MuiNativeSelect-select').click()
-        // .select('option:eq(1)');
         cy.get('select[name="platform"]').select('Chelsea');
+       
 
         cy.get('input[name="email"]').type("example@gmail.com")
         cy.get('select[name="phoneCountry"]').select('pakistan').type("99992223223")
