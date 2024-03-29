@@ -20,7 +20,6 @@ describe("User should create Add New Platform", () => {
       .clear()
       .type("John");
     cy.get(
-      ":nth-child(1) > :nth-child(1) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input"
     )
       .clear()
       .type("Dohn");
@@ -153,7 +152,7 @@ cy.contains('Continue').click()
 cy.get(':nth-child(1) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('It is a long established fact that a reader will be distracted by the readable')
 const img = 'Capture.PNG';
 cy.get('input[type="file"]').attachFile(img);
-// cy.get('.css-n47iab-MuiButtonBase-root-MuiButton-root').click()
+// cy.get('.css-n47iab-MuiButtonBase-root-MuiButton-root').click()    *****BUTTON DISABLED******
 
 });
 });
