@@ -19,12 +19,8 @@ describe("User should create Add New Platform", () => {
     )
       .clear()
       .type("John");
-    cy.get(
-    )
-      .clear()
-      .type("Dohn");
-    cy.get(
-      ":nth-child(2) > :nth-child(2) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input"
+      cy.get(':nth-child(1) > :nth-child(1) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').clear().type("Dohn");
+    cy.get(":nth-child(2) > :nth-child(2) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input"
     )
       .clear()
       .type("Jack@gmail.com");
@@ -104,28 +100,20 @@ describe("User should create Add New Platform", () => {
 
     //****** >>>Apperance<<< *****
     const Photo = "avatar.png";
-    cy.get(
-      ".MuiGrid-spacing-xs-3 > :nth-child(1) > .css-rzymmg > .css-6iggc8 > .MuiBox-root > .MuiTypography-root"
-    ).attachFile(Photo);
+    cy.get('input[type="file"]').attachFile(Photo);
 
     //***** >>>Apperance <<< *****
     const profilePic = "dv.PNG";
 
-    cy.get(
-      'input[type="file"]'
-    ).attachFile(profilePic);
+    cy.get('input[type="file"]').attachFile(profilePic);
 
     
 
-    cy.get(
-        'input[type="file"]'
-    ).eq(1).attachFile(profilePic);
+    cy.get('input[type="file"]').eq(1).attachFile(profilePic);
 
-    cy.get(
-        'input[type="file"]'
-    ).eq(2).attachFile(profilePic);
+    cy.get('input[type="file"]').eq(2).attachFile(profilePic);
     
-    // cy.get(':nth-child(1) > .jss84 > .css-1kw8um1 > .css-1lomthf > :nth-child(2) > .MuiBox-root > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').clear().type('0')
+    cy.get('.MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').eq(0).clear().type('0')
     // cy.get(':nth-child(1) > .jss84 > .css-1kw8um1 > .css-1lomthf > :nth-child(3) > .MuiBox-root > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').clear().type('255')
     // cy.get(':nth-child(2) > .jss84 > .css-1kw8um1 > :nth-child(1) > .MuiBox-root > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').clear().type('00ff69')
     // cy.get(':nth-child(2) > .jss84 > .css-1kw8um1 > .css-1lomthf > :nth-child(1) > .MuiBox-root > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').clear().type('0')

@@ -6,14 +6,12 @@ describe("Add new User",()=>{
     ).type("superAdmin@gmail.com");
     cy.get('input[name="password"]').type("password");
     cy.contains('Log In').click()
-    cy.wait(8000);
+    cy.wait(4000);
     cy.get(".sidebar-toggler > div").click();
-    cy.contains('Super Data').scrollIntoView().should('be.visible').click(); 
-    cy.get('.css-1a8w37c > :nth-child(2)').click()
-    cy.wait(2000)
-    cy.get('[href="/dashboard/users"]').click()
+    cy.contains('Super Data').scrollIntoView().should('be.visible').click();  
+        cy.get('[href="/dashboard/users"]').click()
     cy.wait(5000)
-    cy.get('[style="margin-top: 4px; padding-left: 5px;"] > div > .injected-svg > g > path').click()
+    cy.contains('ADD NEW USER').click()
     cy.wait(2000)
    
   
