@@ -1,3 +1,4 @@
+/// <reference types='cypress' />
 describe('Add new Club',()=>{
     it('Club should be added',()=>{
         cy.visit("https://vertexo-admin-git-dev-waleedsaifi.vercel.app/dashboard");
