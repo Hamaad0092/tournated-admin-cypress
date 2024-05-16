@@ -1,8 +1,8 @@
-describe("User Setting s",()=>{
+describe("User Setting",()=>{
     beforeEach(()=>{
         cy.visit('https://client.spadasoft.com/userSettings/')
     })
-    it("",()=>{
+    it("User should be editable and can change their record successfully",()=>{
         const photo='avatar.png'
         cy.get('input[type="file"]').attachFile(photo)
         cy.get('input[name="name"]').type("test")
@@ -47,7 +47,17 @@ describe("User Setting s",()=>{
         cy.get('input[name="youtube"]').type("https://www.youtube.com")
 
         cy.contains('Third Party Licences').click()
-        cy.get('input[name="fideId"]').clear().type('12345')
+        cy.get(':nth-child(1) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('1234')
+        cy.get(':nth-child(2) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('1234')
+        cy.get('.MuiGrid-container > :nth-child(3) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type("1234")
+        cy.get(':nth-child(4) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('1234')
+        cy.get(':nth-child(5) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('1234')
+        cy.get(':nth-child(6) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('1234')
+        cy.get(':nth-child(7) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('1234')
+        cy.get(':nth-child(8) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('1234')
+        cy.get(':nth-child(9) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('1234')
+        cy.get(':nth-child(10) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('1234')
+
         cy.contains("Password").click()
         cy.get('input[name="password"]').type("12345678")
         cy.get('input[name="reEnter"]').type("12345678")
