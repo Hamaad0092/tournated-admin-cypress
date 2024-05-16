@@ -22,10 +22,11 @@ describe("User Setting s",()=>{
         
         cy.contains('Career').click().wait(2000)
       
-        cy.get('input[name="country"][placeholder="coach"]').type('Rehman').click().wait(500);
-        cy.get('div[id="teamName"]').click()
+        // cy.get('input[name="country"][placeholder="coach"]').type('Rehman').click().wait(500);
+        cy.get('div[id="teamName"]').click().wait(2000)
+        cy.get('[data-value="3"]').click()
 
-        cy.get('input[name="country"][placeholder="parent"]').type('rehman').click()
+        // cy.get('input[name="country"][placeholder="parent"]').type('rehman').click().wait(2000)
         cy.get(':nth-child(4) > .MuiFormControl-root > .MuiOutlinedInput-root > .MuiOutlinedInput-input').type('this is test data')
         cy.get(':nth-child(2) > .MuiFormControlLabel-root').then(box => {
             box.is(':disabled') ? 
@@ -46,7 +47,10 @@ describe("User Setting s",()=>{
         cy.get('input[name="youtube"]').type("https://www.youtube.com")
 
         cy.contains('Third Party Licences').click()
-        cy.get('input[name="fadeId"]').clear().type('12345')
+        cy.get('input[name="fideId"]').clear().type('12345')
+        cy.contains("Password").click()
+        cy.get('input[name="password"]').type("12345678")
+        cy.get('input[name="reEnter"]').type("12345678")
 
 
 
