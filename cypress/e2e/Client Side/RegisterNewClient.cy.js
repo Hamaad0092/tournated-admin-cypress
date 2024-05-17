@@ -78,7 +78,7 @@ describe(`Register a new Client `, () => {
             cy.get("input[name='reEnter']").type('        ');
             cy.contains("Continue").click()
             cy.wait(8000)
-            cy.contains("Chess").click()
+            
             cy.contains("Continue").click()
             cy.get('.PhoneInputInput').clear().type("+923120000000")
             cy.get('input[name="citizenship"]').clear().type("Pakistan")
