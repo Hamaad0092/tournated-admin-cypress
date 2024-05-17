@@ -138,7 +138,7 @@ describe(`Register a new Client `, () => {
         // Wait for the page to load and ensure that "Federation member" button is visible
         cy.get('input[type="checkbox"]').eq(2).check();
         
-        // Click on the Register button and verify if it is enabled
+        
         // cy.contains("Register").should('not.be.disabled').click();
     });
     
